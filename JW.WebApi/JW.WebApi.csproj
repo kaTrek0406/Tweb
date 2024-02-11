@@ -123,6 +123,23 @@
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
     <ItemGroup>
+        <Content Include="App_Data\images\about-img.jpg" />
+        <Content Include="App_Data\images\b1.jpg" />
+        <Content Include="App_Data\images\b2.jpg" />
+        <Content Include="App_Data\images\client.jpg" />
+        <Content Include="App_Data\images\favicon.png" />
+        <Content Include="App_Data\images\o1.jpg" />
+        <Content Include="App_Data\images\o2.jpg" />
+        <Content Include="App_Data\images\o3.jpg" />
+        <Content Include="App_Data\images\p1.png" />
+        <Content Include="App_Data\images\p2.png" />
+        <Content Include="App_Data\images\p3.png" />
+        <Content Include="App_Data\images\p4.png" />
+        <Content Include="App_Data\images\p5.png" />
+        <Content Include="App_Data\images\p6.png" />
+        <Content Include="App_Data\images\p7.png" />
+        <Content Include="App_Data\images\p8.png" />
+        <Content Include="App_Data\images\slider-bg.jpg" />
         <Content Include="favicon.ico"/>
         <Content Include="fonts\fontawesome-webfont.ttf" />
         <Content Include="fonts\fontawesome-webfont.woff" />
@@ -145,7 +162,6 @@
         <Content Include="Views\Home\Index.cshtml"/>
     </ItemGroup>
     <ItemGroup>
-        <Folder Include="App_Data"/>
         <Folder Include="Content\" />
         <Folder Include="Models"/>
         <Folder Include="Scripts\" />
