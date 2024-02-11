@@ -140,6 +140,10 @@
         <Content Include="App_Data\images\p7.png" />
         <Content Include="App_Data\images\p8.png" />
         <Content Include="App_Data\images\slider-bg.jpg" />
+        <Content Include="App_Data\styles\bootstrap.css" />
+        <Content Include="App_Data\styles\font-awesome.min.css" />
+        <Content Include="App_Data\styles\responsive.css" />
+        <Content Include="App_Data\styles\style.css" />
         <Content Include="favicon.ico"/>
         <Content Include="fonts\fontawesome-webfont.ttf" />
         <Content Include="fonts\fontawesome-webfont.woff" />
