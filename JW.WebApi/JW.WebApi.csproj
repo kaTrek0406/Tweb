@@ -153,6 +153,8 @@
         <Content Include="Scripts\bootstrap.js" />
         <Content Include="Scripts\custom.js" />
         <Content Include="Scripts\jquery-3.4.1.min.js" />
+        <Content Include="Views\Home\Blog.cshtml" />
+        <Content Include="Views\Home\Shop.cshtml" />
         <Content Include="Web.config"/>
         <Content Include="Web.Debug.config">
             <DependentUpon>Web.config</DependentUpon>

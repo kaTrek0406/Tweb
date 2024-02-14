@@ -24,5 +24,17 @@ namespace JW.WebApi.Controllers
             ViewBag.Message = "Your contact page.";
             return View();
         }
+
+        public ActionResult Shop()
+        {
+            ViewBag.Message = "Your shop page.";
+            return View();
+        }
+
+        public ActionResult Blog()
+        {
+            ViewBag.Message = "Your blog page.";
+            return View();        
+        }
     }
 }
