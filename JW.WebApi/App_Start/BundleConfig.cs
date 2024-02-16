@@ -1,7 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
-
-namespace JW.WebApi
+﻿namespace JW.WebApi
 {
     using System.Web.Optimization;
 
