@@ -177,6 +177,20 @@
     <ItemGroup>
         <None Include="packages.config"/>
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\JW.BusinessLogic\JW.BusinessLogic.csproj">
+        <Project>{dd9841f7-f791-4bf1-b4ca-06ac81a94b67}</Project>
+        <Name>JW.BusinessLogic</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\JW.Domain\JW.Domain.csproj">
+        <Project>{53e6912f-8ea4-4d99-8038-3cf7dcc9f51a}</Project>
+        <Name>JW.Domain</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\JW.Infrastructure\JW.Infrastructure.csproj">
+        <Project>{7f305eae-cf4b-4ea7-aff1-b5c7256ed8ac}</Project>
+        <Name>JW.Infrastructure</Name>
+      </ProjectReference>
+    </ItemGroup>
     <PropertyGroup>
         <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
         <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
