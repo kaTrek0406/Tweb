@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace JW.WebApi.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -14,6 +15,13 @@ namespace JW.WebApi.Controllers
         }
 
         public ActionResult About()
+        {
+            ViewBag.Message = "Your application description page.";
+            return View();
+        }
+        
+        [Authorize(Roles = "Adm")]
+        public ActionResult SecretPlace()
         {
             ViewBag.Message = "Your application description page.";
             return View();
