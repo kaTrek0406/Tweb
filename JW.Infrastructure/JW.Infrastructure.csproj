@@ -51,6 +51,10 @@
     <Compile Include="Migrations\202403311727260_Katruk.Designer.cs">
       <DependentUpon>202403311727260_Katruk.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404161445168_authchanges.cs" />
+    <Compile Include="Migrations\202404161445168_authchanges.Designer.cs">
+      <DependentUpon>202404161445168_authchanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -67,6 +71,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202403311727260_Katruk.resx">
       <DependentUpon>202403311727260_Katruk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404161445168_authchanges.resx">
+      <DependentUpon>202404161445168_authchanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
