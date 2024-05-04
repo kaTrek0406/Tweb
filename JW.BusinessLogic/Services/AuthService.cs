@@ -46,7 +46,7 @@ namespace JW.BusinessLogic.Services
         }
         
         // Генерация хеша пароля с использованием SHA256
-        private static byte[] CreatePasswordHash(string password)
+        public static byte[] CreatePasswordHash(string password)
         {
             using (var sha256 = SHA256.Create())
             {
@@ -62,6 +62,11 @@ namespace JW.BusinessLogic.Services
                 var computedHash = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
                 return computedHash.SequenceEqual(storedHash);
             }
+        }
+
+        public byte[] HashPassword(string password)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
