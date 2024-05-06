@@ -17,6 +17,7 @@ namespace JW.Infrastructure
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<ReturnRequest> ReturnRequests { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
