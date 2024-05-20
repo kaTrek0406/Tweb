@@ -1,0 +1,40 @@
+﻿@model IEnumerable<JW.Domain.Review>
+
+@{
+    ViewBag.Title = "Reviews";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Reviews</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Return to Main Index", "Index", "Home", new { @class = "btn btn-secondary" })
+</p>
+
+<table class="table">
+    <tr>
+        <th>Content</th>
+        <th>Rating</th>
+        <th>Jewelry Item</th>
+        <th>Customer</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Content)</td>
+            <td>@Html.DisplayFor(modelItem => item.Rating)</td>
+            <td>@Html.DisplayFor(modelItem => item.JewelryItem.Name)</td>
+            <td>@Html.DisplayFor(modelItem => item.Customer.Name)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @if (User.IsInRole("Administrator"))
+                {
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                }
+            </td>
+        </tr>
+    }
+
+</table>
