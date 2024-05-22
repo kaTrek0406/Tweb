@@ -1,0 +1,219 @@
+﻿@model JW.Domain.ReturnRequest
+
+@{
+ViewBag.Title = "Return Item";
+Layout = null;
+}
+
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3 class="form-title">Return Item</h3>
+                    <p>Fill in the details below to process your return.</p>
+                    <form id="returnForm" method="post" action="@Url.Action("SubmitReturn", "Return")" class="requires-validation" novalidate>
+
+                        <!-- Order ID -->
+                        <div class="col-md-12">
+                            <input class="form-control" type="number" id="orderId" name="OrderId" placeholder="Order ID" required>
+                        </div>
+
+                        <!-- Reason for Return -->
+                        <div class="col-md-12">
+                            <textarea class="form-control" id="reason" name="Reason" placeholder="Reason for Return" rows="3" required></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-button mt-3 text-center">
+                            <button type="submit" class="btn btn-primary">Submit Return</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Подключаем необходимые библиотеки JavaScript -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/3BxD+PL5B0sRYc2c5EqF+Fbf9U5C5/6B4/6B+Q" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybD2pC2b03W5SlmfOov4tWTKivYflTxJmcAmH8pb8BjRn6V/O" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgC+6yt0J3PAZSGHovY4zY1E9lIjCAEn2vsHBOyBhaeQlknkwg" crossorigin="anonymous"></script>
+
+<!-- Скрипт для валидации формы -->
+<script>
+    (function () {
+        'use strict'
+        const forms = document.querySelectorAll('.requires-validation')
+        Array.from(forms).forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+</script>
+
+<!-- Стили для формы -->
+<style>
+
+    *, body {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    html, body {
+        height: 100%;
+        background-color: #152733;
+        overflow: hidden;
+    }
+
+    .form-holder {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+    }
+
+    .form-holder .form-content {
+        position: relative;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 60px;
+    }
+
+    .form-content .form-items {
+        border: 3px solid #fff;
+        padding: 40px;
+        display: inline-block;
+        width: 100%;
+        min-width: 540px;
+        border-radius: 10px;
+        text-align: left;
+        transition: all 0.4s ease;
+    }
+
+    .form-content h3 {
+        color: #fff;
+        text-align: left;
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .form-content h3.form-title {
+        margin-bottom: 30px;
+    }
+
+    .form-content p {
+        color: #fff;
+        text-align: left;
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 20px;
+        margin-bottom: 30px;
+    }
+
+    .form-content label, .was-validated .form-check-input:invalid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label {
+        color: #fff;
+    }
+
+    .form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content input[type=number], .form-content textarea {
+        width: 100%;
+        padding: 9px 20px;
+        text-align: left;
+        border: 0;
+        outline: 0;
+        border-radius: 6px;
+        background-color: #fff;
+        font-size: 15px;
+        font-weight: 300;
+        color: #8D8D8D;
+        transition: all 0.3s ease;
+        margin-top: 16px;
+    }
+
+    .form-content select {
+        width: 100%;
+        padding: 9px 20px;
+        text-align: left;
+        border: 0;
+        outline: 0;
+        border-radius: 6px;
+        background-color: #fff;
+        font-size: 15px;
+        font-weight: 300;
+        color: #8D8D8D;
+        transition: all 0.3s ease;
+        margin-top: 16px;
+    }
+
+    .btn-primary {
+        background-color: #6C757D;
+        outline: none;
+        border: 0;
+        box-shadow: none;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 6px;
+    }
+
+    .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+        background-color: #495056;
+        outline: none !important;
+        border: none !important;
+        box-shadow: none;
+    }
+
+    .form-content textarea {
+        position: static !important;
+        width: 100%;
+        padding: 8px 20px;
+        border-radius: 6px;
+        text-align: left;
+        background-color: #fff;
+        border: 0;
+        font-size: 15px;
+        font-weight: 300;
+        color: #8D8D8D;
+        outline: none;
+        resize: none;
+        height: 120px;
+        transition: none;
+        margin-bottom: 14px;
+    }
+
+    .form-content textarea:hover, .form-content textarea:focus {
+        border: 0;
+        background-color: #ebeff8;
+        color: #8D8D8D;
+    }
+
+    .mv-up {
+        margin-top: -9px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .invalid-feedback {
+        color: #ff606e;
+    }
+
+    .valid-feedback {
+        color: #2acc80;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+</style>
