@@ -27,6 +27,7 @@
                             @Html.ActionLink("About", "About", "Home", new { }, new { })
                             @Html.ActionLink("Shop", "Shop", "Home", new { }, new { })
                             @Html.ActionLink("Blog", "Blog", "Home", new { }, new { })
+                            @Html.ActionLink("ReturnMe", "Form", "Return", new { }, new { })
                             @if (!User.Identity.IsAuthenticated)
                             {
                                 @Html.ActionLink("SignIn", "SignIn", "UserAccount")
@@ -35,9 +36,9 @@
                             else
                             {
                                 @Html.ActionLink("SignOut", "SignOut", "UserAccount")
-                                if (User.IsInRole("Adm"))
+                                if (User.IsInRole("Administrator") || User.IsInRole("Moderator"))
                                 {
-                                    <li>@Html.ActionLink("SecretPlace", "SecretPlace", "Home")</li>
+                                    <li>@Html.ActionLink("Reviews", "Index", "Reviews")</li>
                                 }
                             }
                         </div>
