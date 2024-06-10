@@ -6,6 +6,23 @@
     @Scripts.Render("~/bundles/scripts")
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .body-content {
+            flex: 1;
+        }
+        footer {
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 <div class="container body-content">

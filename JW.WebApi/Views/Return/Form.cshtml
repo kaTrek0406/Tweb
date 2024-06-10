@@ -17,11 +17,17 @@ Layout = null;
                         <!-- Order ID -->
                         <div class="col-md-12">
                             <input class="form-control" type="number" id="orderId" name="OrderId" placeholder="Order ID" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid Order ID.
+                            </div>
                         </div>
 
                         <!-- Reason for Return -->
                         <div class="col-md-12">
                             <textarea class="form-control" id="reason" name="Reason" placeholder="Reason for Return" rows="3" required></textarea>
+                            <div class="invalid-feedback">
+                                Please provide a reason for the return.
+                            </div>
                         </div>
 
                         <!-- Submit Button -->
@@ -59,7 +65,6 @@ Layout = null;
 
 <!-- Стили для формы -->
 <style>
-
     *, body {
         font-family: 'Poppins', sans-serif;
         font-weight: 400;
